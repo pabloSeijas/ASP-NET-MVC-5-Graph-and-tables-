@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Página de inicio";
+}
+
+    <div class="jumbotron">
+
+        <!-- top tiles -->
+        <div class="row" style="display: inline-block;">
+            <canvas id="math" width="200" height="200"></canvas>
+        </div>
+        <div class="row" style="display: inline-block;">
+            <canvas id="sci" width="200" height="200"></canvas>
+        </div>
+        <div class="row" style="display: inline-block;">
+            <canvas id="sport" width="200" height="200"></canvas>
+        </div>
+        <div class="row" style="display: inline-block;">
+            <canvas id="cast" width="200" height="200"></canvas>
+        </div>
+        <div class="row" style="display: inline-block;">
+            <canvas id="eng" width="200" height="200"></canvas>
+        </div>
+
+        <li>@Html.ActionLink("Ver en Tabla", "Table", "Home")</li>
+
+
+    </div>

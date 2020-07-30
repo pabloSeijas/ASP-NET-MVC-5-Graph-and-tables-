@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NotasDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NotasDB.dbo.Notas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Notas">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="matematica" Type="int" />
+    <Property Name="ciencias" Type="int" />
+    <Property Name="castellano" Type="int" />
+    <Property Name="ingles" Type="int" />
+    <Property Name="deporte" Type="int" />
+  </EntityType>
+  <EntityContainer Name="NotasDBModelStoreContainer">
+    <EntitySet Name="Notas" EntityType="Self.Notas" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Notas].[id] AS [id], 
+    [Notas].[matematica] AS [matematica], 
+    [Notas].[ciencias] AS [ciencias], 
+    [Notas].[castellano] AS [castellano], 
+    [Notas].[ingles] AS [ingles], 
+    [Notas].[deporte] AS [deporte]
+    FROM [dbo].[Notas] AS [Notas]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

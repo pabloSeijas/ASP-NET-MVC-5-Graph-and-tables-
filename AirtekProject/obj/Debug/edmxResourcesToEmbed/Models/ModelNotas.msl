@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NotasDBModelStoreContainer" CdmEntityContainer="NotasContext">
+    <EntitySetMapping Name="Notas">
+      <EntityTypeMapping TypeName="NotasDBModel.Notas">
+        <MappingFragment StoreEntitySet="Notas">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="matematica" ColumnName="matematica" />
+          <ScalarProperty Name="ciencias" ColumnName="ciencias" />
+          <ScalarProperty Name="castellano" ColumnName="castellano" />
+          <ScalarProperty Name="ingles" ColumnName="ingles" />
+          <ScalarProperty Name="deporte" ColumnName="deporte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
