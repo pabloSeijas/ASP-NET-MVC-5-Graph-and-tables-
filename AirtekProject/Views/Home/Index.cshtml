@@ -2,7 +2,6 @@
     ViewBag.Title = "Página de inicio";
 }
 
-    <div class="jumbotron">
 
         <!-- top tiles -->
         <div class="row" style="display: inline-block;">
@@ -20,8 +19,12 @@
         <div class="row" style="display: inline-block;">
             <canvas id="eng" width="200" height="200"></canvas>
         </div>
+        
 
         <li>@Html.ActionLink("Ver en Tabla", "Table", "Home")</li>
 
-
-    </div>
+        <div class="container-fluid">
+            <div class="row" style="display: inline-block;">
+                <canvas id="doughnut" width="400" height="400"></canvas>
+            </div>
+        </div>
