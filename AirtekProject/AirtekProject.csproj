@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <Use64BitIISExpress />
+    <Use64BitIISExpress>false</Use64BitIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -432,6 +432,7 @@
     <Content Include="Vendors\Chart.js\test\scale.logarithmic.tests.js" />
     <Content Include="Vendors\Chart.js\test\scale.radialLinear.tests.js" />
     <Content Include="Vendors\Chart.js\test\scale.time.tests.js" />
+    <Content Include="Vendors\echarts\echarts.min.js" />
     <Content Include="Vendors\fontawesome\css\font-awesome.css" />
     <Content Include="Vendors\fontawesome\css\font-awesome.min.css" />
     <Content Include="Vendors\fontawesome\fonts\fontawesome-webfont.svg" />
