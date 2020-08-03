@@ -257,10 +257,10 @@
             myChart.setOption(option, true);
         }
         //Bar Graph
-        for (e = 0; e <= data.length; e++) {
-            if (e >= data.length) {
-                break;
-            }
+        //for (e = 0; e <= data.length; e++) {
+        //    if (e >= data.length) {
+        //        break;
+        //    }
 
             var dom = document.getElementById("container2");
             var myChart = echarts.init(dom);
@@ -306,13 +306,28 @@
                         type: 'bar',
                         data: math,
                         markPoint: {
-                            mark_point_symbol: "triangle",
+                            itemStyle: {
+                                color: {
+                                    type: 'linear',
+                                    x: 0,
+                                    y: 0,
+                                    x2: 1,
+                                    y2: 0,
+                                    colorStops: [{
+                                        offset: 0, color: 'white' // 0% 处的颜色
+                                    }, {
+                                        offset: 1, color: 'white' // 100% 处的颜色
+                                    }],
+                                    globalCoord: false // 缺省为 false
+                                }
+                          
+                        },
                             data: [
-                                { value: math[e], xAxis: 0, yAxis: math[0] },
-                                { value: math[e], xAxis: 1, yAxis: math[1] },
-                                { value: math[e], xAxis: 2, yAxis: math[2] },
-                                { value: math[e], xAxis: 3, yAxis: math[3] },
-                                { value: math[e], xAxis: 4, yAxis: math[4] },
+                                { value: math[0], xAxis: 0, yAxis: math[0] },
+                                { value: math[1], xAxis: 1, yAxis: math[1] },
+                                { value: math[2], xAxis: 2, yAxis: math[2] },
+                                { value: math[3], xAxis: 3, yAxis: math[3] },
+                                { value: math[4], xAxis: 4, yAxis: math[4] },
                             ]
                         },
                         markLine: {
@@ -326,13 +341,26 @@
                         type: 'bar',
                         data: sci,
                         markPoint: {
-                            itemStyle: { color: 'gray' },
+                            itemStyle: {
+                                color: {
+                                    type: 'linear',
+                                    x: 0,
+                                    y: 0,
+                                    x2: 1,
+                                    y2: 0,
+                                    colorStops: [{
+                                        offset: 0, color: 'white' // 0% 处的颜色
+                                    }, {
+                                        offset: 1, color: 'white' // 100% 处的颜色
+                                    }],
+                                    globalCoord: false // 缺省为 false
+                                }},
                             data: [
-                                { value: sci[e], xAxis: 0, yAxis: sci[0] },
-                                { value: sci[e], xAxis: 1, yAxis: sci[1] },
-                                { value: sci[e], xAxis: 2, yAxis: sci[2] },
-                                { value: sci[e], xAxis: 3, yAxis: sci[3] },
-                                { value: sci[e], xAxis: 4, yAxis: sci[4] },
+                                { value: sci[0], xAxis: 0, yAxis: sci[0] },
+                                { value: sci[1], xAxis: 1, yAxis: sci[1] },
+                                { value: sci[2], xAxis: 2, yAxis: sci[2] },
+                                { value: sci[3], xAxis: 3, yAxis: sci[3] },
+                                { value: sci[4], xAxis: 4, yAxis: sci[4] },
                             ]
                         },
                         markLine: {
@@ -346,13 +374,26 @@
                         type: 'bar',
                         data: eng,
                         markPoint: {
-                            itemStyle: { color: "Gray" },
+                            itemStyle: {
+                                color: {
+                                    type: 'linear',
+                                    x: 0,
+                                    y: 0,
+                                    x2: 1,
+                                    y2: 0,
+                                    colorStops: [{
+                                        offset: 0, color: 'white' // 0% 处的颜色
+                                    }, {
+                                        offset: 1, color: 'white' // 100% 处的颜色
+                                    }],
+                                    globalCoord: false // 缺省为 false
+                                }},
                             data: [
-                                { value: eng[e], xAxis: 0, yAxis: eng[0] },
-                                { value: eng[e], xAxis: 1, yAxis: eng[1] },
-                                { value: eng[e], xAxis: 2, yAxis: eng[2] },
-                                { value: eng[e], xAxis: 3, yAxis: eng[3] },
-                                { value: eng[e], xAxis: 4, yAxis: eng[4] },
+                                { value: eng[0], xAxis: 0, yAxis: eng[0] },
+                                { value: eng[1], xAxis: 1, yAxis: eng[1] },
+                                { value: eng[2], xAxis: 2, yAxis: eng[2] },
+                                { value: eng[3], xAxis: 3, yAxis: eng[3] },
+                                { value: eng[4], xAxis: 4, yAxis: eng[4] },
                             ]
                         },
                         markLine: {
@@ -367,13 +408,26 @@
                         type: 'bar',
                         data: sport,
                         markPoint: {
-                            itemStyle: { color: "gray" },
+                            itemStyle: {
+                                color: {
+                                    type: 'linear',
+                                    x: 0,
+                                    y: 0,
+                                    x2: 1,
+                                    y2: 0,
+                                    colorStops: [{
+                                        offset: 0, color: 'white' // 0% 处的颜色
+                                    }, {
+                                        offset: 1, color: 'white' // 100% 处的颜色
+                                    }],
+                                    globalCoord: false // 缺省为 false
+                                }},
                             data: [
-                                { value: sport[e], xAxis: 0, yAxis: sport[0] },
-                                { value: sport[e], xAxis: 1, yAxis: sport[1] },
-                                { value: sport[e], xAxis: 2, yAxis: sport[2] },
-                                { value: sport[e], xAxis: 3, yAxis: sport[3] },
-                                { value: sport[e], xAxis: 4, yAxis: sport[4] }
+                                { value: sport[0], xAxis: 0, yAxis: sport[0] },
+                                { value: sport[1], xAxis: 1, yAxis: sport[1] },
+                                { value: sport[2], xAxis: 2, yAxis: sport[2] },
+                                { value: sport[3], xAxis: 3, yAxis: sport[3] },
+                                { value: sport[4], xAxis: 4, yAxis: sport[4] }
                             ]
                         },
                         markLine: {
@@ -386,13 +440,26 @@
                         type: 'bar',
                         data: cast,
                         markPoint: {
-                            itemStyle: { color: "gray" },
+                            itemStyle: {
+                                color: {
+                                    type: 'linear',
+                                    x: 0,
+                                    y: 0,
+                                    x2: 1,
+                                    y2: 0,
+                                    colorStops: [{
+                                        offset: 0, color: 'white' // 0% 处的颜色
+                                    }, {
+                                        offset: 1, color: 'white' // 100% 处的颜色
+                                    }],
+                                    globalCoord: false // 缺省为 false
+                                } },
                             data: [
-                                { value: cast[e], xAxis: 0, yAxis: cast[0] },
-                                { value: cast[e], xAxis: 1, yAxis: cast[1] },
-                                { value: cast[e], xAxis: 2, yAxis: cast[2] },
-                                { value: cast[e], xAxis: 3, yAxis: cast[3] },
-                                { value: cast[e], xAxis: 4, yAxis: cast[4] }
+                                { value: cast[0], xAxis: 0, yAxis: cast[0] },
+                                { value: cast[1], xAxis: 1, yAxis: cast[1] },
+                                { value: cast[2], xAxis: 2, yAxis: cast[2] },
+                                { value: cast[3], xAxis: 3, yAxis: cast[3] },
+                                { value: cast[4], xAxis: 4, yAxis: cast[4] }
                             ]
                         },
                         markLine: {
@@ -410,7 +477,7 @@
 
             }
 
-        }
+        //}
         console.log(e);
        
     });
