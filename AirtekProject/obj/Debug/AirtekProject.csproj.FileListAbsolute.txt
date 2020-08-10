@@ -72,7 +72,6 @@ C:\Users\Pablo\source\repos\AirtekProject\AirtekProject\bin\System.Web.WebPages.
 C:\Users\Pablo\source\repos\AirtekProject\AirtekProject\bin\Newtonsoft.Json.xml
 C:\Users\Pablo\source\repos\AirtekProject\AirtekProject\bin\Antlr3.Runtime.pdb
 C:\Users\Pablo\source\repos\AirtekProject\AirtekProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Pablo\source\repos\AirtekProject\AirtekProject\obj\Debug\AirtekProject.csprojAssemblyReference.cache
 C:\Users\Pablo\source\repos\AirtekProject\AirtekProject\obj\Debug\AirtekProject.csproj.CoreCompileInputs.cache
 C:\Users\Pablo\source\repos\AirtekProject\AirtekProject\obj\Debug\AirtekProject.csproj.CopyComplete
 C:\Users\Pablo\source\repos\AirtekProject\AirtekProject\obj\Debug\AirtekProject.dll
@@ -81,3 +80,4 @@ C:\Users\Pablo\source\repos\AirtekProject\AirtekProject\bin\EntityFramework.dll
 C:\Users\Pablo\source\repos\AirtekProject\AirtekProject\bin\EntityFramework.SqlServer.dll
 C:\Users\Pablo\source\repos\AirtekProject\AirtekProject\bin\EntityFramework.xml
 C:\Users\Pablo\source\repos\AirtekProject\AirtekProject\bin\EntityFramework.SqlServer.xml
+C:\Users\Pablo\source\repos\AirtekProject\AirtekProject\obj\Debug\AirtekProject.csprojAssemblyReference.cache

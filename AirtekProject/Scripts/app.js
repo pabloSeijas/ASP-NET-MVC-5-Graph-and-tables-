@@ -1,214 +1,26 @@
-﻿
-//GLOBALS
-    var math, sci, sport, cast, eng, i,e;
-    math = [];
-    sci = [];
-    sport = [];
-    cast = [];
-    eng = [];
-
-    $.get("Home/GetData", function (data, status) {
-        
-            for (i = 0; i <= data.length; i++) {
-                if (i === data.length) { break; }
-                math.push(data[i].matematica);
-                sci.push(data[i].ciencias);
-                sport.push(data[i].deporte);
-                cast.push(data[i].castellano);
-                eng.push(data[i].ingles);
-            }
-           
+﻿//GLOBALS
+var vMONTOAUT, vMONTOMANUAL, vTOTAL, vTOTALDOL, i, e;
+    vMONTOAUT = [];
+    vMONTOMANUAL = [];
+    vTOTAL = [];
+    vTOTALDOL = [];
 
 
-        //var ctx = document.getElementById('math').getContext('2d');
-        //var myChart = new Chart(ctx, {
-        //    type: 'bar',
-        //    data: {
-        //        labels: ['Examen #1', 'Examen#2', 'Examen#3', 'Examen#4', 'Examen#5'],
-        //        datasets: [{
-        //            label: 'Matemáticas',
-        //            data: math,
-        //            backgroundColor: [
-        //                'rgba(255, 99, 132, 0.2)',
-        //                'rgba(54, 162, 235, 0.2)',
-        //                'rgba(255, 206, 86, 0.2)',
-        //                'rgba(75, 192, 192, 0.2)',
-        //                'rgba(153, 102, 255, 0.2)',
-        //                'rgba(255, 159, 64, 0.2)'
-        //            ],
-        //            borderColor: [
-        //                'rgba(255, 99, 132, 1)',
-        //                'rgba(54, 162, 235, 1)',
-        //                'rgba(255, 206, 86, 1)',
-        //                'rgba(75, 192, 192, 1)',
-        //                'rgba(153, 102, 255, 1)',
-        //                'rgba(255, 159, 64, 1)'
-        //            ],
-        //            borderWidth: 1
-        //        }]
-        //    },
-        //    options: {
-        //        scales: {
-        //            yAxes: [{
-        //                ticks: {
-        //                    beginAtZero: true
-        //                }
-        //            }]
-        //        }
-        //    }
-        //});
+$(document).ready(function () {
 
-        //var ctx = document.getElementById('sci').getContext('2d');
-        //var myChart = new Chart(ctx, {
-        //    type: 'bar',
-        //    data: {
-        //        labels: ['Examen #1', 'Examen#2', 'Examen#3', 'Examen#4', 'Examen#5'],
-        //        datasets: [{
-        //            label: 'Ciencias',
-        //            data: sci,
-        //            backgroundColor: [
-        //                'rgba(255, 99, 132, 0.2)',
-        //                'rgba(54, 162, 235, 0.2)',
-        //                'rgba(255, 206, 86, 0.2)',
-        //                'rgba(75, 192, 192, 0.2)',
-        //                'rgba(153, 102, 255, 0.2)',
-        //                'rgba(255, 159, 64, 0.2)'
-        //            ],
-        //            borderColor: [
-        //                'rgba(255, 99, 132, 1)',
-        //                'rgba(54, 162, 235, 1)',
-        //                'rgba(255, 206, 86, 1)',
-        //                'rgba(75, 192, 192, 1)',
-        //                'rgba(153, 102, 255, 1)',
-        //                'rgba(255, 159, 64, 1)'
-        //            ],
-        //            borderWidth: 1
-        //        }]
-        //    },
-        //    options: {
-        //        scales: {
-        //            yAxes: [{
-        //                ticks: {
-        //                    beginAtZero: true
-        //                }
-        //            }]
-        //        }
-        //    }
-        //});
+    $.get("Home/ReciboGetData", function (data, status) {
+        var cliente;
 
-        //var ctx = document.getElementById('sport').getContext('2d');
-        //var myChart = new Chart(ctx, {
-        //    type: 'bar',
-        //    data: {
-        //        labels: ['Examen #1', 'Examen#2', 'Examen#3', 'Examen#4', 'Examen#5'],
-        //        datasets: [{
-        //            label: 'Deportes',
-        //            data: sport,
-        //            backgroundColor: [
-        //                'rgba(255, 99, 132, 0.2)',
-        //                'rgba(54, 162, 235, 0.2)',
-        //                'rgba(255, 206, 86, 0.2)',
-        //                'rgba(75, 192, 192, 0.2)',
-        //                'rgba(153, 102, 255, 0.2)',
-        //                'rgba(255, 159, 64, 0.2)'
-        //            ],
-        //            borderColor: [
-        //                'rgba(255, 99, 132, 1)',
-        //                'rgba(54, 162, 235, 1)',
-        //                'rgba(255, 206, 86, 1)',
-        //                'rgba(75, 192, 192, 1)',
-        //                'rgba(153, 102, 255, 1)',
-        //                'rgba(255, 159, 64, 1)'
-        //            ],
-        //            borderWidth: 1
-        //        }]
-        //    },
-        //    options: {
-        //        scales: {
-        //            yAxes: [{
-        //                ticks: {
-        //                    beginAtZero: true
-        //                }
-        //            }]
-        //        }
-        //    }
-        //});
-
-        //var ctx = document.getElementById('cast').getContext('2d');
-        //var myChart = new Chart(ctx, {
-        //    type: 'bar',
-        //    data: {
-        //        labels: ['Examen #1', 'Examen#2', 'Examen#3', 'Examen#4', 'Examen#5'],
-        //        datasets: [{
-        //            label: 'Castellano',
-        //            data: cast,
-        //            backgroundColor: [
-        //                'rgba(255, 99, 132, 0.2)',
-        //                'rgba(54, 162, 235, 0.2)',
-        //                'rgba(255, 206, 86, 0.2)',
-        //                'rgba(75, 192, 192, 0.2)',
-        //                'rgba(153, 102, 255, 0.2)',
-        //                'rgba(255, 159, 64, 0.2)'
-        //            ],
-        //            borderColor: [
-        //                'rgba(255, 99, 132, 1)',
-        //                'rgba(54, 162, 235, 1)',
-        //                'rgba(255, 206, 86, 1)',
-        //                'rgba(75, 192, 192, 1)',
-        //                'rgba(153, 102, 255, 1)',
-        //                'rgba(255, 159, 64, 1)'
-        //            ],
-        //            borderWidth: 1
-        //        }]
-        //    },
-        //    options: {
-        //        scales: {
-        //            yAxes: [{
-        //                ticks: {
-        //                    beginAtZero: true
-        //                }
-        //            }]
-        //        }
-        //    }
-        //});
-
-        //var ctx = document.getElementById('eng').getContext('2d');
-        //var myChart = new Chart(ctx, {
-        //    type: 'bar',
-        //    data: {
-        //        labels: ['Examen #1', 'Examen#2', 'Examen#3', 'Examen#4', 'Examen#5'],
-        //        datasets: [{
-        //            label: 'Inglés',
-        //            data: eng,
-        //            backgroundColor: [
-        //                'rgba(255, 99, 132, 0.2)',
-        //                'rgba(54, 162, 235, 0.2)',
-        //                'rgba(255, 206, 86, 0.2)',
-        //                'rgba(75, 192, 192, 0.2)',
-        //                'rgba(153, 102, 255, 0.2)',
-        //                'rgba(255, 159, 64, 0.2)'
-        //            ],
-        //            borderColor: [
-        //                'rgba(255, 99, 132, 1)',
-        //                'rgba(54, 162, 235, 1)',
-        //                'rgba(255, 206, 86, 1)',
-        //                'rgba(75, 192, 192, 1)',
-        //                'rgba(153, 102, 255, 1)',
-        //                'rgba(255, 159, 64, 1)'
-        //            ],
-        //            borderWidth: 1
-        //        }]
-        //    },
-        //    options: {
-        //        scales: {
-        //            yAxes: [{
-        //                ticks: {
-        //                    beginAtZero: true
-        //                }
-        //            }]
-        //        }
-        //    }
-        //});
+        var editor; // use a global for the submit and return data rendering in the examples
+        console.log(data)
+        for (i = 0; i <= data.length; i++) {
+            if (i === data.length) { break; }
+            vMONTOAUT.push(data[i].MONTOAUT);
+            vMONTOMANUAL.push(data[i].MONTOMANUAL);
+            vTOTAL.push(data[i].TOTAL);
+            vTOTALDOL.push(data[i].TOTALDOL);
+            
+        }
 
         var dom = document.getElementById("container");
         var myChart = echarts.init(dom);
@@ -216,8 +28,7 @@
         option = null;
         option = {
             title: {
-                text: 'Notas',
-                subtext: 'Matemáticas',
+                text: 'Montos',
                 left: 'center'
             },
             tooltip: {
@@ -225,266 +36,130 @@
                 formatter: '{a} <br/>{b} : {c} ({d}%)'
             },
             legend: {
-                orient: 'vertical',
+                orient: 'horizontal',
                 left: 'left',
-                data: ['Examen #1', 'Examen #2', 'Examen #3', 'Examen #4', 'Examen #5']
+                data: ['Monto Auto', 'Monto Manual', 'Total', 'Total Dólar'],
+                bottom: '10%'
             },
             series: [
                 {
-                    name: 'Notas',
+                    name: 'Montos',
                     type: 'pie',
-                    radius: '55%',
-                    center: ['50%', '60%'],
+                    radius: '40%',
+                    center: ['45%', '35%'],
+                    label: {
+                        distanceToLabelLine: 1,
+                        margin: '10%',
+                },
                     data: [
-                        { value: math[0], name: 'Examen #1' },
-                        { value: math[1], name: 'Examen #2' },
-                        { value: math[2], name: 'Examen #3' },
-                        { value: math[3], name: 'Examen #4' },
-                        { value: math[4], name: 'Examen #5' }
+                        { value: vMONTOAUT[0], name: 'Monto Auto' },
+                        { value: vMONTOMANUAL[1], name: 'Monto Manual' },
+                        { value: vTOTAL[2], name: 'Total' },
+                        { value: vTOTALDOL[3], name: 'Total Dólar' },
+                        
                     ],
                     emphasis: {
                         itemStyle: {
                             shadowBlur: 10,
                             shadowOffsetX: 0,
-                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            shadowColor: 'rgba(0, 0, 0, 0.5)',
                         }
                     }
                 }
             ]
         };
         ;
+
         if (option && typeof option === "object") {
             myChart.setOption(option, true);
         }
-        //Bar Graph
-        //for (e = 0; e <= data.length; e++) {
-        //    if (e >= data.length) {
-        //        break;
-        //    }
-
-            var dom = document.getElementById("container2");
-            var myChart = echarts.init(dom);
-            var app = {};
-            option = null;
-            option = {
-                title: {
-                    text: 'Notas',
-                    subtext: 'Varias'
-                },
-                tooltip: {
-                    trigger: 'axis'
-                },
-                legend: {
-                    data: ['Matemáticas', 'Ciencias', "Inglés", "Castellano", "Deporte"]
-                },
-                toolbox: {
-                    show: true,
-                    feature: {
-                        dataView: { show: true, readOnly: false },
-                        magicType: { show: true, type: ['line', 'bar'] },
-                        restore: { show: true },
-                        saveAsImage: { show: true }
-                    }
-                },
-                calculable: true,
-                xAxis: [
-                    {
-                        type: 'category',
-                        data: ['Nota#1 ', 'Nota#2 ', 'Nota#3 ', 'Nota#4 ', 'Nota#5 ']
-                    }
-                ],
-                yAxis: [
-                    {
-                        type: 'value',
-                        max: 15
-
-                    }
-                ],
-                series: [
-                    {
-                        name: 'Matemáticas',
-                        type: 'bar',
-                        data: math,
-                        markPoint: {
-                            itemStyle: {
-                                color: {
-                                    type: 'linear',
-                                    x: 0,
-                                    y: 0,
-                                    x2: 1,
-                                    y2: 0,
-                                    colorStops: [{
-                                        offset: 0, color: 'white' // 0% 处的颜色
-                                    }, {
-                                        offset: 1, color: 'white' // 100% 处的颜色
-                                    }],
-                                    globalCoord: false // 缺省为 false
-                                }
-                          
-                        },
-                            data: [
-                                { value: math[0], xAxis: 0, yAxis: math[0] },
-                                { value: math[1], xAxis: 1, yAxis: math[1] },
-                                { value: math[2], xAxis: 2, yAxis: math[2] },
-                                { value: math[3], xAxis: 3, yAxis: math[3] },
-                                { value: math[4], xAxis: 4, yAxis: math[4] },
-                            ]
-                        },
-                        markLine: {
-                            data: [
-                                { type: 'average', name: '平均值' }
-                            ]
-                        }
-                    },
-                    {
-                        name: 'Ciencias',
-                        type: 'bar',
-                        data: sci,
-                        markPoint: {
-                            itemStyle: {
-                                color: {
-                                    type: 'linear',
-                                    x: 0,
-                                    y: 0,
-                                    x2: 1,
-                                    y2: 0,
-                                    colorStops: [{
-                                        offset: 0, color: 'white' // 0% 处的颜色
-                                    }, {
-                                        offset: 1, color: 'white' // 100% 处的颜色
-                                    }],
-                                    globalCoord: false // 缺省为 false
-                                }},
-                            data: [
-                                { value: sci[0], xAxis: 0, yAxis: sci[0] },
-                                { value: sci[1], xAxis: 1, yAxis: sci[1] },
-                                { value: sci[2], xAxis: 2, yAxis: sci[2] },
-                                { value: sci[3], xAxis: 3, yAxis: sci[3] },
-                                { value: sci[4], xAxis: 4, yAxis: sci[4] },
-                            ]
-                        },
-                        markLine: {
-                            data: [
-                                { type: 'average', name: '平均值' }
-                            ]
-                        }
-                    },
-                    {
-                        name: 'Inglés',
-                        type: 'bar',
-                        data: eng,
-                        markPoint: {
-                            itemStyle: {
-                                color: {
-                                    type: 'linear',
-                                    x: 0,
-                                    y: 0,
-                                    x2: 1,
-                                    y2: 0,
-                                    colorStops: [{
-                                        offset: 0, color: 'white' // 0% 处的颜色
-                                    }, {
-                                        offset: 1, color: 'white' // 100% 处的颜色
-                                    }],
-                                    globalCoord: false // 缺省为 false
-                                }},
-                            data: [
-                                { value: eng[0], xAxis: 0, yAxis: eng[0] },
-                                { value: eng[1], xAxis: 1, yAxis: eng[1] },
-                                { value: eng[2], xAxis: 2, yAxis: eng[2] },
-                                { value: eng[3], xAxis: 3, yAxis: eng[3] },
-                                { value: eng[4], xAxis: 4, yAxis: eng[4] },
-                            ]
-                        },
-                        markLine: {
-                            data: [
-                                { type: 'average', name: '平均值' }
-                            ]
-                        }
-                    },
-
-                    {
-                        name: 'Deporte',
-                        type: 'bar',
-                        data: sport,
-                        markPoint: {
-                            itemStyle: {
-                                color: {
-                                    type: 'linear',
-                                    x: 0,
-                                    y: 0,
-                                    x2: 1,
-                                    y2: 0,
-                                    colorStops: [{
-                                        offset: 0, color: 'white' // 0% 处的颜色
-                                    }, {
-                                        offset: 1, color: 'white' // 100% 处的颜色
-                                    }],
-                                    globalCoord: false // 缺省为 false
-                                }},
-                            data: [
-                                { value: sport[0], xAxis: 0, yAxis: sport[0] },
-                                { value: sport[1], xAxis: 1, yAxis: sport[1] },
-                                { value: sport[2], xAxis: 2, yAxis: sport[2] },
-                                { value: sport[3], xAxis: 3, yAxis: sport[3] },
-                                { value: sport[4], xAxis: 4, yAxis: sport[4] }
-                            ]
-                        },
-                        markLine: {
-                            data: [
-                                { type: 'average', name: '平均值' }
-                            ]
-                        }
-                    }, {
-                        name: 'Castellano',
-                        type: 'bar',
-                        data: cast,
-                        markPoint: {
-                            itemStyle: {
-                                color: {
-                                    type: 'linear',
-                                    x: 0,
-                                    y: 0,
-                                    x2: 1,
-                                    y2: 0,
-                                    colorStops: [{
-                                        offset: 0, color: 'white' // 0% 处的颜色
-                                    }, {
-                                        offset: 1, color: 'white' // 100% 处的颜色
-                                    }],
-                                    globalCoord: false // 缺省为 false
-                                } },
-                            data: [
-                                { value: cast[0], xAxis: 0, yAxis: cast[0] },
-                                { value: cast[1], xAxis: 1, yAxis: cast[1] },
-                                { value: cast[2], xAxis: 2, yAxis: cast[2] },
-                                { value: cast[3], xAxis: 3, yAxis: cast[3] },
-                                { value: cast[4], xAxis: 4, yAxis: cast[4] }
-                            ]
-                        },
-                        markLine: {
-                            data: [
-                                { type: 'average', name: '平均值' }
-                            ]
-                        }
-                    },
-                ]
-            };
-            ;
-            if (option && typeof option === "object") {
-                myChart.setOption(option, true);
-
-
-            }
-
-        //}
-        console.log(e);
        
-    });
-    
+          
+        $("#example").dataTable({
+            destroy: true,
 
- 
-    
+            dom: "fBtip",   //P: opciones de filtrado //Bfrtip  ifrtBp
+
+            responsive: true,
+
+            select: true,
+
+            processing: true,
 
 
-   
+            buttons: ['copy', 'excel', 'pdf', 'print', { extend: 'colvis', text: 'Columna' }],
+            
+            "columnDefs": [
+
+                {
+
+                    "targets": [0, 1, 2, 3, 4],
+
+                    "visible": true,
+
+                }
+
+            ],
+
+            select: {
+
+                style: "single"
+
+            },
+
+            "order": [[0, "desc"]],
+
+            "lengthMenu": [[10, 15, 20, -1], [5, 10, 15, 20, "All"]],
+
+            "language": {
+
+                "lengthMenu": "Mostar _MENU_ entradas",
+
+                "search": "Buscar:",
+
+                "zeroRecords": "No se encontraron registros coincidentes",
+
+                "infoFiltered": "(filtrado de _MAX_ entradas totales)",
+
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ entradas",
+
+                "infoEmpty": "Mostrando 0 a 0 de 0 entradas",
+
+                "paginate": {
+
+                    "previous": "<<",
+
+                    "next": ">>"
+
+                },
+
+                "processing": '<div class="d-flex justify-content-center"> <div class="spinner-grow text-success" style="width: 3rem; height: 3rem;" role="status"> <span class="sr-only">Loading...</span> </div> </div>'
+            }});
+        for (i = 0; i <= data.length; i++) {
+            if (i === data.length) { break; }
+            vMONTOAUT.push(data[i].MONTOAUT);
+            vMONTOMANUAL.push(data[i].MONTOMANUAL);
+            vTOTAL.push(data[i].TOTAL);
+            vTOTALDOL.push(data[i].TOTALDOL);
+
+        }
+
+       
+        $.each(data, function (key, value) {
+            cliente += '<tr>';
+            cliente += '<td>' + value.NOMBRES + '</td>';
+            cliente += '<td>' + value.CODCLIENTE + '</td>';
+            cliente += '<td>' + value.FECSISTEM + '</td>';
+            cliente += '<td>' + value.VERIFICADOMANUAL + '</td>';
+            cliente += '<td>' + value.FORMAPAGO + '</td>';
+            cliente += '<td>' + value.BANCO + '</td>';
+            cliente += '<td>' + value.TOTAL + '</td>';
+        });
+
+        $('#example').append(cliente);
+
+    })
+
+})
+
+

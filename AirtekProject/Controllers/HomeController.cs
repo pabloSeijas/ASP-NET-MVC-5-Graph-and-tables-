@@ -21,17 +21,29 @@ namespace AirtekProject.Controllers
             return View();
         }
 
-        public JsonResult GetData()
-        {
-            NotasContext db = new NotasContext();
+        //public JsonResult GetData()
+        //{
+        //    NotasContext db = new NotasContext();
 
-            List<Notas> lista = db.Notas.ToList();
+        //    List<Notas> lista = db.Notas.ToList();
 
      
+        //    string product;
+        //    product = "Message from server";
+
+        //    return Json(db.Notas.ToList(), JsonRequestBehavior.AllowGet);
+        //}
+        public JsonResult ReciboGetData()
+        {
+            AirtekContext db = new AirtekContext();
+
+            List<PHRECIBOCAJA> lista = db.PHRECIBOCAJA.ToList();
+
+
             string product;
             product = "Message from server";
 
-            return Json(db.Notas.ToList(), JsonRequestBehavior.AllowGet);
+            return Json(db.PHRECIBOCAJA.ToList(), JsonRequestBehavior.AllowGet);
         }
         public ActionResult About()
         {
@@ -40,21 +52,22 @@ namespace AirtekProject.Controllers
             return View();
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+        //public ActionResult Contact()
+        //{
+        //    NotasContext db = new NotasContext();
+        //    List<Notas> Lista = db.Notas.ToList();
 
-            return View();
-        }
+        //    return View(db.Notas.ToList());
+        //}
 
-        public ActionResult Table()
-        {
+        //public ActionResult Table()
+        //{
 
-             NotasContext db = new NotasContext();
+        //     NotasContext db = new NotasContext();
+        //     List<Notas> lista = db.Notas.ToList();
 
-            List<Notas> lista = db.Notas.ToList();
-
-            return View(db.Notas.ToList());
-        }
+        //    //return Json(db.Notas.ToList(), JsonRequestBehavior.AllowGet);
+        //    return View();
+        //}
     }
 }
