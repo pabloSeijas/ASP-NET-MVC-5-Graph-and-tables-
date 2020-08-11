@@ -74,9 +74,15 @@ $(document).ready(function () {
             myChart.setOption(option, true);
         }
        
-          
+        $.extend(true, $.fn.dataTable.defaults, {
+            "searching": false,
+            "ordering": false
+        });
+        
         $("#example").dataTable({
             destroy: true,
+
+            scrollX:false,
 
             dom: "fBtip",   //P: opciones de filtrado //Bfrtip  ifrtBp
 
@@ -85,6 +91,10 @@ $(document).ready(function () {
             select: true,
 
             processing: true,
+
+            paging: true,
+
+           
 
 
             buttons: ['copy', 'excel', 'pdf', 'print', { extend: 'colvis', text: 'Columna' }],
@@ -144,17 +154,21 @@ $(document).ready(function () {
 
         }
 
-       
+        var fecha = new Date()
+
         $.each(data, function (key, value) {
             cliente += '<tr>';
             cliente += '<td>' + value.NOMBRES + '</td>';
             cliente += '<td>' + value.CODCLIENTE + '</td>';
-            cliente += '<td>' + value.FECSISTEM + '</td>';
-            cliente += '<td>' + value.VERIFICADOMANUAL + '</td>';
-            cliente += '<td>' + value.FORMAPAGO + '</td>';
             cliente += '<td>' + value.BANCO + '</td>';
+            cliente += '<td>' + value.FORMAPAGO + '</td>';
+            cliente += '<td>' + fecha.getDate(value.FECSISTEM) + '/' + fecha.getMonth(value.FECSISTEM) + '/' + fecha.getFullYear(value.FECSISTEM) + '</td>';
+            cliente += '<td>' + value.VERIFICADOMANUAL +'</td>';
             cliente += '<td>' + value.TOTAL + '</td>';
         });
+      
+
+        
 
         $('#example').append(cliente);
 
