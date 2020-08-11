@@ -5,6 +5,9 @@ var vpref, vsucursal, vtecnologia, vtotal, i, e;
     vtotal = [];
     vtecnologia = [];
 
+function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+}
 
 $(document).ready(function () {
 
@@ -21,15 +24,9 @@ $(document).ready(function () {
             vtecnologia.push(data[i].tecnologia);
             
         }
-        function onlyUnique(value, index, self) {
-            return self.indexOf(value) === index;
-        }
+        
         var sucursal = vsucursal.filter(onlyUnique);
         var tecnologia = vtecnologia.filter(onlyUnique);
-        console.log(sucursal)
-        console.log(tecnologia)
-        
-       
         var dom = document.getElementById("container");
         var myChart = echarts.init(dom);
         var app = {};
@@ -50,7 +47,7 @@ $(document).ready(function () {
                     type: 'pie',
                     selectedMode: 'single',
                     radius: [0, '30%'],
-                    left: 50,
+                    left: 0,
                     bottom: 50,
 
                     label: {
@@ -60,7 +57,7 @@ $(document).ready(function () {
                         show: false
                     },
                     data: [
-                        { value: 335, name: tecnologia[0], selected: true },
+                        { value: 335, name: tecnologia[0] },
                         { value: 679, name: tecnologia[1] },
                         { value: 1548, name: tecnologia[2] },
                         { value: 1548, name: tecnologia[3] }
@@ -70,7 +67,7 @@ $(document).ready(function () {
                     name: 'Sucursal',
                     type: 'pie',
                     radius: ['40%', '55%'],
-                    left: 50,
+                    left: 0,
                     bottom: 50,
                     label: {
                         formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}    ',
@@ -126,7 +123,7 @@ $(document).ready(function () {
                         { value: 310, name: sucursal[1] },
                         { value: 234, name: sucursal[2] },
                         { value: 135, name: sucursal[3] },
-                        { value: 1048, name: sucursal[4] },
+                        { value: 104, name: sucursal[4] },
                         { value: 251, name: sucursal[5] },
                         { value: 147, name: sucursal[6] },
                         { value: 102, name: sucursal[7] },
