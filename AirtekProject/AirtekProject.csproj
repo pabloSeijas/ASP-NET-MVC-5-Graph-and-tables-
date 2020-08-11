@@ -135,6 +135,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\instalacionContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>instalacionContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\instalacionContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>instalacionContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\instalacionContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>instalacionContext.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -171,6 +186,9 @@
     <Compile Include="Models\PHRECIBOCAJA.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\reporte.cs">
+      <DependentUpon>instalacionContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -190,6 +208,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\user.png" />
+    <Content Include="Models\instalacionContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>instalacionContext.edmx</DependentUpon>
+      <LastGenOutput>instalacionContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\instalacionContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>instalacionContext.edmx</DependentUpon>
+      <LastGenOutput>instalacionContext.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -227,6 +255,13 @@
     </EntityDeploy>
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\instalacionContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>instalacionContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\instalacionContext.edmx.diagram">
+      <DependentUpon>instalacionContext.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\app.js" />

@@ -33,17 +33,30 @@ namespace AirtekProject.Controllers
 
         //    return Json(db.Notas.ToList(), JsonRequestBehavior.AllowGet);
         //}
-        public JsonResult ReciboGetData()
-        {
-            AirtekContext db = new AirtekContext();
+        //public JsonResult ReciboGetData()
+        //{
+        //    AirtekContext db = new AirtekContext();
 
-            List<PHRECIBOCAJA> lista = db.PHRECIBOCAJA.ToList();
+        //    List<PHRECIBOCAJA> lista = db.PHRECIBOCAJA.ToList();
+
+
+        //    string product;
+        //    product = "Message from server";
+
+        //    return Json(db.PHRECIBOCAJA.ToList(), JsonRequestBehavior.AllowGet);
+        //}
+
+        public JsonResult equiposGetData()
+        {
+            equiposContext db = new equiposContext();
+
+            List<reporte> lista = db.reporte.ToList();
 
 
             string product;
             product = "Message from server";
 
-            return Json(db.PHRECIBOCAJA.ToList(), JsonRequestBehavior.AllowGet);
+            return Json(db.reporte.ToList(), JsonRequestBehavior.AllowGet);
         }
         public ActionResult About()
         {
